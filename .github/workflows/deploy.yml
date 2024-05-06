@@ -27,6 +27,9 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: files/
         server-dir: wp-content/themes/avila_code_theme/
+    
+    - name: Instalação SSH Client
+      run: sudo apt-get install -y openssh-client
 
     - name: Instalação dependências Composer
       uses: appleboy/ssh-action@master
