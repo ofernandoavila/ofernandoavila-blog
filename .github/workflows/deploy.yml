@@ -31,6 +31,9 @@ jobs:
     - name: Instalação servidor SSH
       run: sudo apt-get install -y openssh-client
 
+    - name: Verificação de algoritmos
+      run: ssh-keyscan -p 22 localhost
+
     - name: Instalação dependências Composer
       uses: appleboy/ssh-action@master
       with:
