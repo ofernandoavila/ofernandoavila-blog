@@ -13,11 +13,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Subida arquivos via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+    - name: Criar pasta para adicionar arquivo deploy
+      run: mkdir files
+
+    - name: Adicionando arquivos ao zip
+      run: zip -r files/deploy.zip .
+
+    - name: Copiar arquivos para servidor
+      uses: appleboy/scp-action@v0.1.7
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
-        server-dir: wp-content/themes/avila_code_theme/
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: files/deploy.zip
+        target: public_html/blog/wp-content/themes/
