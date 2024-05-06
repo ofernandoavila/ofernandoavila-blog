@@ -73,7 +73,7 @@ function register_fontawesome() {
     // Register prism.css file
     wp_register_style(
         'fontawesomeCSS',
-        get_stylesheet_directory_uri() . '/assets/fontawesome/css/all.min.css'
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'
     );
 
     // Enqueue the registered style and script files

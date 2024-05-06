@@ -18,7 +18,7 @@ use ofernandoavila\Core\TemplateBuilder;
             <a class="nav-link" href="<?= get_site_url(); ?>">
                 <div class="logo">
                     <img src="<?= get_template_directory_uri(); ?>/assets/profile_pic.png" alt="">
-                    <h3>@avila_code</h3>
+                    <h3>@<?= bloginfo('title') ?></h3>
                 </div>
             </a>
             <?php wp_nav_menu( [ 

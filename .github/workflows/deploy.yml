@@ -13,35 +13,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Criar pasta para adicionar arquivo deploy
-      run: mkdir files
-
-    - name: Criação do arquivo zipado para deploy
-      run: zip -r files/deploy.zip .
-
     - name: Subida arquivos via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: files/
+        local-dir: ./
         server-dir: wp-content/themes/avila_code_theme/
-
-    - name: Instalação servidor SSH
-      run: sudo apt-get install -y openssh-client
-
-    - name: Verificação de algoritmos
-      run: ssh-keyscan -p 22 localhost
-
-    - name: Instalação dependências Composer
-      uses: microsoft/remote-ssh@v0
-      with:
-        ssh-host: ${{ secrets.SSH_HOST }}
-        ssh-username: ${{ secrets.SSH_USERNAME }}
-        ssh-password: ${{ secrets.SSH_PASSWORD }}
-        commands: |
-          cd public_html/blog/wp-content/themes/avila_code_theme
-          unzip -o deploy.zip
-          composer install
-          rm deploy.zip
