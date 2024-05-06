@@ -41,4 +41,4 @@ jobs:
           composer install
           rm deploy.zip
       env:
-        SSH_KEX_ALGORITHMS: "diffie-hellman-group-exchange-sha256"
+        SSH_KEX_ALGORITHMS: "ssh-ed25519"
