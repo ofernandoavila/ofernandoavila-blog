@@ -25,5 +25,6 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
         source: files/deploy.zip
         target: public_html/blog/wp-content/themes/
