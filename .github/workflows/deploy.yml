@@ -37,6 +37,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
+        passphrase: ${{ secrets.SSH_PASSPHARASE }}
         script: |
           cd public_html/blog/wp-content/themes/avila_code_theme
           unzip -o deploy.zip
