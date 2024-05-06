@@ -35,16 +35,13 @@ jobs:
       run: ssh-keyscan -p 22 localhost
 
     - name: Instalação dependências Composer
-      uses: appleboy/ssh-action@master
+      uses: microsoft/remote-ssh@v0
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        use_insecure_cipher: true
-        script: |
+        ssh-host: ${{ secrets.SSH_HOST }}
+        ssh-username: ${{ secrets.SSH_USERNAME }}
+        ssh-password: ${{ secrets.SSH_PASSWORD }}
+        commands: |
           cd public_html/blog/wp-content/themes/avila_code_theme
           unzip -o deploy.zip
           composer install
           rm deploy.zip
-      env:
-        SSH_KEX_ALGORITHMS: "ssh-ed25519, ecdsa-sha2-nistp256"
