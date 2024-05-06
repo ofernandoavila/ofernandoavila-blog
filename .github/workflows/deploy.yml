@@ -39,7 +39,6 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
         key: ${{ secrets.SSH_KEY }}
         script: |
           cd public_html/blog/wp-content/themes/avila_code_theme
@@ -47,4 +46,4 @@ jobs:
           composer install
           rm deploy.zip
       env:
-        SSH_KEX_ALGORITHMS: "diffie-hellman-group-exchange-sha256, ssh-ed25519, ecdsa-sha2-nistp256"
+        SSH_KEX_ALGORITHMS: "ssh-ed25519, ecdsa-sha2-nistp256"
