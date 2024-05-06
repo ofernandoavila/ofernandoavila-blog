@@ -13,13 +13,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Criação do arquivo zipado para deploy
+      run: zip -r deploy.zip .
+
     - name: Subida arquivos via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
+        local-dir: deploy.zip
         server-dir: wp-content/themes/avila_code_theme/
 
     - name: Instalação dependências Composer
@@ -30,4 +33,6 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
           cd public_html/blog/wp-content/themes/avila_code_theme
+          unzip -o deploy.zip
           composer install
+          rm deploy.zip
