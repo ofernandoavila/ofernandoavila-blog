@@ -1,0 +1,15 @@
+{
+    "name": "ofernandoavila/avila_code_theme",
+    "description": "avila code's blog template made for wordpress",
+    "authors": [
+        {
+            "name": "Fernando Avila"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ofernandoavila\\" : "src/"
+        }
+    }
+}

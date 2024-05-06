@@ -1,0 +1,107 @@
+/*
+Theme Name: Avila Code Blog's Theme
+Theme URI: http://wsl/wordpress
+Author: Fernando Avila
+Description: This fabulous theme was created to Fernando Avila's new blog about programming.
+Version: 1.0
+*/
+header .logo {
+  display: flex;
+  align-items: center; }
+  header .logo h2 {
+    text-wrap: nowrap; }
+  header .logo img {
+    width: 10%;
+    object-fit: contain;
+    margin-bottom: 10px; }
+header .nav-item {
+  text-wrap: nowrap !important; }
+
+footer .social-media {
+  gap: 15px; }
+  footer .social-media li {
+    list-style: none; }
+    footer .social-media li a {
+      color: #000; }
+  footer .social-media i {
+    font-size: 22px; }
+footer ul {
+  padding: 0 !important; }
+
+#postagens .postagens-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; }
+  #postagens .postagens-grid .post-card .post-info {
+    height: auto; }
+    #postagens .postagens-grid .post-card .post-info .post-excerpt {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      /* number of lines to show */
+      line-clamp: 3;
+      -webkit-box-orient: vertical; }
+
+.post-card {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1; }
+  .post-card .post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px; }
+  .post-card .post-info .post-title {
+    margin-bottom: auto; }
+  .post-card .post-info .post-excerpt {
+    font-size: .75rem; }
+  .post-card .post-info .post-signature a {
+    color: inherit;
+    text-decoration: none; }
+    .post-card .post-info .post-signature a:hover {
+      text-decoration: underline; }
+
+.post-destaque {
+  justify-content: space-between; }
+  .post-destaque .post-thumb {
+    height: 100%; }
+    .post-destaque .post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px; }
+  .post-destaque .post-info {
+    margin-top: 10px; }
+    .post-destaque .post-info .post-title h5 {
+      font-size: 2.5em !important; }
+    .post-destaque .post-info .post-excerpt {
+      font-size: 1.2rem; }
+
+.post-grid {
+  width: 100%;
+  display: flex;
+  gap: 10px; }
+  .post-grid .post-destaque {
+    display: flex;
+    flex: 2; }
+  .post-grid .posts {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px; }
+
+.post-header {
+  margin-bottom: 3rem; }
+
+code {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: .2em; }
+
+.container {
+  width: 50% !important; }
+
+a {
+  color: inherit; }
+
+/*# sourceMappingURL=style.css.map */

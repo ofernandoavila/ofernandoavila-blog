@@ -1,0 +1,20 @@
+#postagens {
+    .postagens-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        .post-card {
+            .post-info {
+                height: auto;
+                .post-excerpt {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* number of lines to show */
+                            line-clamp: 3; 
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}

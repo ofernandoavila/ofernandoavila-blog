@@ -1,0 +1,20 @@
+header {
+    .logo {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            text-wrap: nowrap;
+        }
+        
+        img {
+            width: 10%;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+    }
+    .nav-item {
+        text-wrap: nowrap !important;
+    }
+}

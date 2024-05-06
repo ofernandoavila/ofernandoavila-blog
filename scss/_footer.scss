@@ -1,0 +1,21 @@
+footer {
+    .social-media {
+        gap: 15px;
+
+        li {
+            list-style: none;
+            
+            a {
+                color: #000;
+            }
+        }
+
+        i {
+            font-size: 22px;
+        }
+    }
+
+    ul {
+        padding: 0 !important;
+    }
+}

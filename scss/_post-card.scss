@@ -1,0 +1,62 @@
+.post-card {
+    display: flex !important;
+    flex-direction: column;
+    flex: 1;
+
+    .post-thumb {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+
+    .post-info {
+        .post-title {
+            margin-bottom: auto;
+        }
+
+        .post-excerpt {
+            font-size: .75rem;
+        }
+
+        .post-signature {
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.post-destaque {
+    justify-content: space-between;
+
+    .post-thumb {
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+
+    .post-info {
+        margin-top: 10px;
+        .post-title {
+            h5 {
+                font-size: 2.5em !important;
+            }
+        }
+
+        .post-excerpt {
+            font-size: 1.2rem;
+        }
+    }
+}
