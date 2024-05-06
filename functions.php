@@ -18,7 +18,7 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 
-add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 10);
 
 function add_a_class($atts, $item, $args) {
     $current_page_id = get_queried_object_id();
@@ -32,7 +32,7 @@ function add_a_class($atts, $item, $args) {
     
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'add_a_class', 1, 3);
+add_filter('nav_menu_link_attributes', 'add_a_class', 1, 10);
 
 add_action( 'init', 'criar_menu_topo' );
 
