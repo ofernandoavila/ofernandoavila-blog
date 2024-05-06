@@ -35,6 +35,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         key: ${{ secrets.SSH_KEY }}
+        use_insecure_cipher: true
         script: |
           cd public_html/blog/wp-content/themes/avila_code_theme
           unzip -o deploy.zip
