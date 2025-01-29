@@ -1,25 +1,22 @@
 import { defineConfig } from 'vite'
-import laravel from 'laravel-vite-plugin'
-import * as path from 'path'
+import { wordpress } from "wordpress-vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
-        laravel({
+        wordpress({
             input: [
                 'src/main.tsx'
             ],
-            publicDirectory: 'assets',
+            refresh: [
+                '**.php',
+                '**.vue',
+                '**.css',
+            ],
+            namespace: "theme-vite",
+            ssrExternal: true
         }),
     ],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, 'assets'),
-        },
-    },
-    build: {
-        assetsDir: '.',
-    },
     server: {
         headers: {
             'Access-Control-Allow-Origin': '*', // Permite qualquer origem (para desenvolvimento)
