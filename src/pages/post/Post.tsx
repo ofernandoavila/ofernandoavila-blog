@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { WPService } from "../../services/WPService";
 import { BasicView } from "../../components/basic-view/BasicView";
 
