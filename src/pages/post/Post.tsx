@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { WPService } from "../../services/WPService";
+import { BasicView } from "../../components/basic-view/BasicView";
 
 export function Post() {
     const [post, setPost] = useState<any | null>(null);
@@ -14,12 +15,16 @@ export function Post() {
         }
     }, [slug]);
 
-    if(!post) return <></>;
+    if(!post) return <BasicView></BasicView>;
 
     return (
-        <>
-            <Link to={'/'}>Ir para Home</Link>
-            <h1>{ post.title.rendered }</h1>
-        </>
+        <BasicView>
+            { post ? (
+                <>
+                    <h2>{ post.title.rendered }</h2>
+                    <article dangerouslySetInnerHTML={{ __html: post.content.rendered }}></article>
+                </>
+            ) : '' }
+        </BasicView>
     )
 }

@@ -9,6 +9,7 @@ function load_scripts()
         $viteDevServer = 'http://localhost:5173';
         wp_enqueue_script_module('vite-client', $viteDevServer . '/@vite/client', [], null);
         wp_enqueue_script_module('main-script', $viteDevServer . '/src/main.tsx', ['vite-client'], null);
+        wp_localize_script('main-script', 'VITE_APP_WP_PASSWORD', ['teste 123']);
     } else {
         $manifestPath = get_theme_file_path('/assets/build/manifest.json');
         if (file_exists($manifestPath)) {

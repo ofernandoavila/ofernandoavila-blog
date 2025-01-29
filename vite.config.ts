@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import laravel from 'laravel-vite-plugin'
 import * as path from 'path'
 
-
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
@@ -20,5 +19,12 @@ export default defineConfig({
     },
     build: {
         assetsDir: '.',
+    },
+    server: {
+        headers: {
+            'Access-Control-Allow-Origin': '*', // Permite qualquer origem (para desenvolvimento)
+            'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+            'Access-Control-Allow-Headers': 'X-Requested-With,Content-Type,Authorization',
+        },
     }
 })
