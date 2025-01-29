@@ -7,7 +7,7 @@ import GlobalContextProvider from "./contexts/GlobalContext";
 function App() {
     return (
         <GlobalContextProvider>
-            <BrowserRouter basename="/wordpress">
+            <BrowserRouter basename="/">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/blog" element={<Blog />} />

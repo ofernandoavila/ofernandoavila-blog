@@ -25,7 +25,6 @@ export default function GlobalContextProvider({ children }: GlobalContextProps) 
     const [wp_service] = useState<WPService>(new WPService());
 
     useEffect(() => {
-        console.log(window.wpViteData);
         wp_service.get_settings().then( data => setSite(data));
     }, []);
 
