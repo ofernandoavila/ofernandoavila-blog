@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGlobal } from "../../hooks/useGlobal";
 
@@ -9,8 +8,9 @@ export function Header() {
         <header>
             <h2>{ site.title }</h2>
             <ul>
-                <li><Link to={'/'}>Home</Link></li>
-                <li><Link to={'/blog'}>Blog</Link></li>
+                { site.menus.primary.map( item => (
+                    <li><Link to={ item.url }>{ item.title }</Link></li>
+                ) ) }
             </ul>
         </header>
     );
