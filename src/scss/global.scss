@@ -1,0 +1,76 @@
+@use '../../node_modules/avilalab-elements/dist/avilalab-elements.css';
+@use 'mobile';
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    height: fit-content;
+    padding: 8px 24px;
+}
+
+.back-to-site {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+a:has(.card) {
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+}
+
+#login {
+    height: 100%;    
+
+    .row {
+        height: 100%;
+    }
+    
+    .col-8, .col-4 {
+        padding: 0 !important;
+    }
+
+    .col-8 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    span {
+        position: relative;
+        margin: 24px 0px 40px 0px;
+
+        &::after, &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 125px;
+            border: 1px solid #999999;
+        }
+
+        &::after {
+            right: 200%;
+        }
+
+        &::before {
+            left: 200%;
+        }
+    }
+}
+
+.container-fluid main:has(#login) {
+    height: 100vh;
+}

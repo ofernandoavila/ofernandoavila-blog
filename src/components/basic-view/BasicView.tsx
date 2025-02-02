@@ -2,15 +2,17 @@ import { ReactNode } from "react";
 import { Header } from "../header/Header";
 
 interface BasicViewProps {
+    hideHeader?: boolean;
     children?: ReactNode;
 }
 
-export function BasicView({ children }: BasicViewProps) {
+export function BasicView({ children, hideHeader }: BasicViewProps) {
     return (
-        <>
-            <Header />
-            <h1>{ import.meta.env.VITE_APP_WP_AUTH_TOKEN }</h1>
-            <main>{ children }</main>
-        </>
+        <div className="vh-100 d-flex flex-column">
+            <div className="container-fluid">
+                { hideHeader ? '' : <Header /> }
+                <main>{ children }</main>
+            </div>
+        </div>
     );
 }

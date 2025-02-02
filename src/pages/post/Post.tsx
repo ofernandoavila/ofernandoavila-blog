@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { WPService } from "../../services/WPService";
 import { BasicView } from "../../components/basic-view/BasicView";
-import { PostContentWidget } from 'avilalab-elements/main';
+import { PostContent } from 'avilalab-elements';
 import { Post as PostType } from "../../models/Post";
 
 export function Post() {
@@ -21,14 +21,19 @@ export function Post() {
 
     return (
         <BasicView>
-            { post ? (
-                <PostContentWidget
-                    postThumbnailUrl={ post._embedded?.["wp:featuredmedia"][0].link }
-                    postPublishDate={ post.date }
-                    postTitle={ post.title.rendered }
-                    postContent={ post.content.rendered }
-                />
-            ) : '' }
+            <div className="container">
+                <div className="row">
+                    <div className="col-4"></div>
+                    <div className="col-8">
+                        <PostContent
+                            postThumbnailUrl={ post.thumbnail_url }
+                            postPublishDate={ post.date }
+                            postTitle={ post.title }
+                            postContent={ post.content }
+                        />
+                    </div>
+                </div>
+            </div>
         </BasicView>
     )
 }

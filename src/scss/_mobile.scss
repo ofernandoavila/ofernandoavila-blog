@@ -1,0 +1,19 @@
+@media (max-width: 575.98px) {
+    #login {
+        height: 100%;
+        .row {
+            height: 100%;
+            
+            .col-8 { display: none; }
+    
+            .col-4 {
+                height: 100%;
+                display: flex;
+                flex: 1;
+                flex-grow: 1;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
