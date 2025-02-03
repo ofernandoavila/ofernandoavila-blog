@@ -9,8 +9,8 @@ interface BasicViewProps {
 export function BasicView({ children, hideHeader }: BasicViewProps) {
     return (
         <div className="vh-100 d-flex flex-column">
+            { hideHeader ? '' : <Header /> }
             <div className="container-fluid">
-                { hideHeader ? '' : <Header /> }
                 <main>{ children }</main>
             </div>
         </div>
